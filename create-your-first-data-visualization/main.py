@@ -12,4 +12,4 @@ plt.pie(snack_scores, labels=slice_labels)
 plt.title("My Favourite Snacks")
 
 # Put the name of your file in the quotes and give it a .png extension
-plt.savefig("snack-ratings.png")
+plt.savefig("snack_scores.png")
