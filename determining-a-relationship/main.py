@@ -26,6 +26,7 @@ wage = pd.read_csv("wage.csv", delimiter=",")
 happiness = pd.read_csv("happiness.csv", delimiter=",")
 # print(happiness)
 
+# Converting wages to USD
 format_currency(wage)
 
 wage_and_happiness = wage.merge(happiness)
