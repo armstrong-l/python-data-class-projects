@@ -26,8 +26,7 @@ wage = pd.read_csv("wage.csv", delimiter=",")
 happiness = pd.read_csv("happiness.csv", delimiter=",")
 # print(happiness)
 
-wage_usd = format_currency(wage)
-# print(wage_usd)
+format_currency(wage)
 
 wage_and_happiness = wage.merge(happiness)
 # print(wage_and_happiness)
@@ -38,8 +37,8 @@ wage_average_per_country = wage_and_happiness_by_country["Value"].mean()
 
 happiness_average_per_country = wage_and_happiness_by_country["Happiness score"].mean()
 
-print(f"Countries with the highest average wages: {round(wage_average_per_country.nlargest(10), 2)}")
-print(f"Countries with the lowest average wages: {round(wage_average_per_country.nsmallest(10), 2)}")
+print(f"Countries with the highest average wages: {round(wage_average_per_country.nlargest(20), 2)}")
+print(f"Countries with the lowest average wages: {round(wage_average_per_country.nsmallest(20), 2)}")
 
-print(f"Countries with the highest average happiness score: {round(happiness_average_per_country.nlargest(10), 2)}")
-print(f"Countries with the lowest average happiness score: {round(happiness_average_per_country.nsmallest(10), 2)}")
+# print(f"Countries with the highest average happiness score: {round(happiness_average_per_country.nlargest(10), 2)}")
+# print(f"Countries with the lowest average happiness score: {round(happiness_average_per_country.nsmallest(10), 2)}")
