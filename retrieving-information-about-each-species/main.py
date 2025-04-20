@@ -18,6 +18,23 @@ def get_categories(url):
     data[category_name] = category_animals
   return data
 
+def get_animal(url):
+  soup = get_soup(url)
+  table = soup.find("table", {"class": "infobox biota"})
+  if not table:
+    return "No class found."
+  else:
+    rows = table.find_all("tr")
+    for row in rows:
+      if "Class:" in row.get_text():
+        animal_class =  row.find("a").contents[0]    
+  return animal_class
+      
+
+
 category_data = get_categories("https://skillcrush.github.io/web-scraping-endangered-species/")
 
-print(category_data)
+animal_class = get_animal("https://en.wikipedia.org/wiki/Honey_badger")
+
+# print(category_data)
+print(animal_class)
